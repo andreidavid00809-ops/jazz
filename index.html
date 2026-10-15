@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,17 +18,17 @@
             font-family: Georgia, "Times New Roman", serif;
             background: #DDF3FF;
             color: #142D4E;
+            padding: 25px;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 25px;
         }
 
         .container {
-            background: #F8FCFF;
             width: 100%;
-            max-width: 540px;
-            padding: 45px 30px;
+            max-width: 650px;
+            padding: 42px 30px;
+            background: #F8FCFF;
             text-align: center;
             border-radius: 25px;
             border: 1px solid #B9E5FA;
@@ -37,17 +38,17 @@
         .logo {
             display: inline-block;
             background: #DDF3FF;
+            padding: 12px 18px;
             border-radius: 18px;
-            padding: 13px 17px;
             font-size: 30px;
             margin-bottom: 18px;
         }
 
         .tag {
+            color: #6386A5;
             font-size: 12px;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: #6386A5;
             margin-bottom: 12px;
         }
 
@@ -57,19 +58,24 @@
             margin: 0 0 12px;
         }
 
+        h2 {
+            font-size: 25px;
+            margin: 25px 0 15px;
+        }
+
         .subtitle {
-            font-size: 17px;
-            font-style: italic;
             color: #6386A5;
-            margin-bottom: 22px;
+            font-style: italic;
+            font-size: 17px;
+            margin-bottom: 24px;
         }
 
         .description {
+            max-width: 480px;
+            margin: 0 auto 25px;
             font-size: 15px;
             line-height: 1.9;
             color: #496782;
-            max-width: 390px;
-            margin: 0 auto 28px;
         }
 
         .divider {
@@ -84,10 +90,12 @@
             background: #142D4E;
             color: #FFFFFF;
             text-decoration: none;
-            padding: 15px 30px;
+            padding: 14px 28px;
             border-radius: 30px;
             font-size: 15px;
+            border: 1px solid #142D4E;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .button:hover {
@@ -97,11 +105,104 @@
             box-shadow: 0 6px 15px rgba(20, 45, 78, 0.12);
         }
 
-        .secondary {
-            display: block;
-            margin-top: 16px;
+        .secondary-button {
+            background: transparent;
+            color: #142D4E;
+        }
+
+        .secondary-button:hover {
+            background: #DDF3FF;
+            color: #142D4E;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 15px;
+            margin: 28px 0;
+            text-align: left;
+        }
+
+        .feature {
+            padding: 20px 17px;
+            background: #EAF7FF;
+            border: 1px solid #D2ECFA;
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-4px);
+        }
+
+        .emoji {
+            font-size: 27px;
+        }
+
+        .feature h3 {
+            font-size: 16px;
+            margin: 10px 0 7px;
+        }
+
+        .feature p {
             font-size: 13px;
+            line-height: 1.7;
+            color: #496782;
+            margin: 0;
+        }
+
+        .steps {
+            text-align: left;
+            max-width: 450px;
+            margin: 25px auto;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin: 22px 0;
+        }
+
+        .number {
+            flex-shrink: 0;
+            width: 34px;
+            height: 34px;
+            background: #142D4E;
+            color: #FFFFFF;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .step p {
+            color: #496782;
+            font-size: 14px;
+            line-height: 1.7;
+            margin: 5px 0 0;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 25px;
             color: #6386A5;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back:hover {
+            color: #142D4E;
+            text-decoration: underline;
         }
 
         .footer {
@@ -113,13 +214,29 @@
             line-height: 1.8;
         }
 
+        [hidden] {
+            display: none !important;
+        }
+
         @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+
             .container {
-                padding: 38px 22px;
+                padding: 32px 20px;
             }
 
             h1 {
                 font-size: 36px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .button {
+                padding: 13px 22px;
             }
         }
     </style>
@@ -127,13 +244,16 @@
 
 <body>
 
-    <main class="container">
+<main class="container">
+
+    <!-- WELCOME PAGE -->
+    <section id="welcome">
 
         <div class="logo">⌕</div>
 
         <div class="tag">CVA Campus Lost & Found</div>
 
-        <h1>REFOUND</h1>
+        <h1>ReFOUND</h1>
 
         <div class="subtitle">
             Every lost item deserves a way home.
@@ -148,26 +268,203 @@
             belongings and reconnect them with their owners.
         </p>
 
-        <!-- Replace this URL with your actual app link -->
         <a
-            href="https://refound.freebuff.app/"
+            href="?page=info"
             class="button"
             target="_blank"
             rel="noopener noreferrer"
         >
-            Click to Open ↗
+            Start →
         </a>
 
-        <span class="secondary">
-            One report could make someone's day.
-        </span>
+        <p class="description" style="margin-top: 20px; margin-bottom: 0;">
+            Your campus. Your community. Helping lost items
+            find their way home.
+        </p>
 
-        <div class="footer">
-            Made for a more connected campus ♡<br>
-            ReFOUND · Lost & Found made easier
+    </section>
+
+
+    <!-- INFORMATION PAGE -->
+    <section id="information" hidden>
+
+        <div class="logo">⌕</div>
+
+        <div class="tag">Welcome to ReFOUND</div>
+
+        <h1>Find What Matters.</h1>
+
+        <div class="subtitle">
+            A smarter way to reconnect lost belongings with their owners.
         </div>
 
-    </main>
+        <div class="divider"></div>
+
+        <p class="description">
+            ReFOUND is a campus lost-and-found platform designed
+            to help the CVA community report missing belongings
+            and share information about items found on campus.
+
+            Instead of wondering where your belongings went,
+            you can use the platform to help reunite them with
+            the people who own them.
+        </p>
+
+
+        <!-- FEATURES -->
+        <h2>What Can You Do with ReFOUND?</h2>
+
+        <div class="features">
+
+            <div class="feature">
+                <div class="emoji">🔎</div>
+                <h3>Report Lost Items</h3>
+                <p>
+                    Share information about an item you lost
+                    so others can help you find it.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="emoji">📦</div>
+                <h3>Report Found Items</h3>
+                <p>
+                    Report an item you found to help its
+                    rightful owner recover it.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="emoji">🤝</div>
+                <h3>Reconnect Owners</h3>
+                <p>
+                    Help students connect with people who
+                    may have found their missing belongings.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="emoji">🏫</div>
+                <h3>Campus Community</h3>
+                <p>
+                    Encourage honesty, responsibility, and
+                    cooperation throughout the school.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- HOW IT WORKS -->
+        <h2>How Does It Work?</h2>
+
+        <div class="steps">
+
+            <div class="step">
+                <div class="number">1</div>
+                <div>
+                    <strong>Open ReFOUND</strong>
+                    <p>
+                        Visit the platform to access its available features.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="number">2</div>
+                <div>
+                    <strong>Log In or Create an Account</strong>
+                    <p>
+                        Access your existing account or create a new
+                        account through the ReFOUND application.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="number">3</div>
+                <div>
+                    <strong>Submit a Report</strong>
+                    <p>
+                        Provide the necessary information about your
+                        lost or found item using the app's features.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="number">4</div>
+                <div>
+                    <strong>Help Items Find Their Owners</strong>
+                    <p>
+                        Use the available reporting process to help
+                        belongings return to their rightful owners.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- ACCOUNT OPTIONS -->
+        <div class="divider"></div>
+
+        <h2>Ready to Get Started?</h2>
+
+        <p class="description">
+            Join the CVA community and help make lost-and-found
+            reporting easier and more convenient.
+        </p>
+
+        <div class="actions">
+
+            <a
+                href="https://refound.freebuff.app/"
+                class="button"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Log In →
+            </a>
+
+            <a
+                href="https://refound.freebuff.app/"
+                class="button secondary-button"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Create Account
+            </a>
+
+        </div>
+
+        <a href="?" class="back">
+            ← Back to Welcome Page
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <div class="footer">
+        Made for a more connected campus ♡<br>
+        ReFOUND · Lost & Found Made Easier
+    </div>
+
+</main>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const showInfo = params.get("page") === "info";
+
+    document.getElementById("welcome").hidden = showInfo;
+    document.getElementById("information").hidden = !showInfo;
+
+    document.title = showInfo
+        ? "About ReFOUND | Lost & Found"
+        : "ReFOUND | Lost & Found";
+</script>
 
 </body>
 </html>
+```
